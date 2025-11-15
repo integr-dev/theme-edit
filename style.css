@@ -5,7 +5,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 input[type="color"]::-webkit-color-swatch {
     border: none;
-    margin: -1rem;
+    scale: 10;
 }
 
 input[type="color"] {
