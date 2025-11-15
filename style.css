@@ -1,0 +1,13 @@
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    margin: -1rem;
+}
+
+input[type="color"] {
+    cursor: auto;
+}

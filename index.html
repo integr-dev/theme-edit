@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-theme="sunset">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Theme Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/theme/sunset.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="grid grid-cols-2 gap-4 w-full">
+                <fieldset class="fieldset bg-base-100 border-base-100 rounded-box border p-4 w-full">
+                    <legend class="fieldset-legend">General Info</legend>
+
+                    <label class="label" for="theme-name">Name</label>
+                    <input id="theme-name" type="text" class="input w-full validator" placeholder="My Awesome Theme" />
+
+                    <label class="label" for="theme-author">Author</label>
+                    <input id="theme-author" type="text" class="input w-full validator" placeholder="John Doe"/>
+
+                    <label class="label" for="theme-description">Description</label>
+                    <input id="theme-description" type="text" class="input w-full validator" placeholder="A theme about colors"/>
+
+                    <label class="label" for="theme-type">Type</label>
+                    <select id="theme-type" class="select w-full validator" onchange="onChangeType(this)">
+                        <option>Gradient</option>
+                        <option>Solid</option>
+                    </select>
+                </fieldset>
+
+                <fieldset class="fieldset bg-base-100 border-base-100 rounded-box border p-4 w-full">
+                    <legend class="fieldset-legend">Other Colors</legend>
+
+                    <div class="join">
+                        <div class="w-full">
+                            <label class="label" for="theme-disabled-fill">Disabled Fill</label>
+                            <input id="theme-disabled-fill" type="color" class="input join-item" value="#161616">
+                        </div>
+                        <div class="w-full">
+                            <label class="label" for="theme-disabled-outline">Disabled Outline</label>
+                            <input id="theme-disabled-outline" type="color" class="input join-item" value="#131313">
+                        </div>
+                    </div>
+
+                    <div class="join">
+                        <div class="w-full">
+                            <label class="label" for="theme-background-fill">Background Fill</label>
+                            <input id="theme-background-fill" type="color" class="input join-item" value="#141414">
+                        </div>
+                        <div class="w-full">
+                            <label class="label" for="theme-background-outline">Background Outline</label>
+                            <input id="theme-background-outline" type="color" class="input join-item" value="#161616">
+                        </div>
+                    </div>
+
+                    <label class="label" for="theme-text-color">Text Color</label>
+                    <input id="theme-text-color" type="color" class="input w-full" value="#DCDCDC">
+                </fieldset>
+
+                <fieldset class="fieldset bg-base-100 border-base-100 rounded-box border p-4 w-full">
+                    <legend class="fieldset-legend">Primary Colors</legend>
+
+                    <div class="fieldset w-full" id="primary-container">
+                        <div class="join w-full">
+                            <div class="w-full">
+                                <label class="label" for="theme-primary-fill-0">1. Fill Stop</label>
+                                <input id="theme-primary-fill-0" type="color" class="input join-item" value="#F07C59">
+                            </div>
+                            <div class="w-full">
+                                <label class="label" for="theme-primary-outline-0">1. Outline Stop</label>
+                                <input id="theme-primary-outline-0" type="color" class="input join-item" value="#EB6958">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="add-primary-button" class="btn mt-4 w-full" onclick="addPrimary()">Add</button>
+                </fieldset>
+
+                <fieldset class="fieldset bg-base-100 border-base-100 rounded-box border p-4 w-full">
+                    <legend class="fieldset-legend">Secondary Colors</legend>
+
+                    <div class="fieldset w-full" id="secondary-container">
+                        <div class="join w-full">
+                            <div class="w-full">
+                                <label class="label" for="theme-secondary-fill-0">1. Fill Stop</label>
+                                <input id="theme-secondary-fill-0" type="color" class="input join-item" value="#E09363">
+                            </div>
+                            <div class="w-full">
+                                <label class="label" for="theme-secondary-outline-0">1. Outline Stop</label>
+                                <input id="theme-secondary-outline-0" type="color" class="input join-item" value="#E5785A">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="add-secondary-button" class="btn mt-4 w-full" onclick="addSecondary()">Add</button>
+                </fieldset>
+
+                <button class="btn btn-primary mt-4 w-full col-span-2" onclick="downloadJson()">Download</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
